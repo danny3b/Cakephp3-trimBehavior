@@ -10,7 +10,7 @@ class TrimBehavior extends Behavior
 {
     public function beforeSave(Event $event, EntityInterface $entity)
     {
-        $fields = $entity->visibleProperties();
+        $fields = $entity->getVisible();
         foreach ($fields as $field) {
             $value = $entity->get($field);
             if (is_string($value)) {
